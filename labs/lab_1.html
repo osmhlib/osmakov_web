@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота №1 | Форма реєстрації</title>
+    <style>
+        /* Базові CSS стилі 
+        тимчасово? */
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+            button:hover {
+                background-color: #0056b3;
+            }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Мій персональний сайт</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Головна</a></li>
+                <li><a href="../about.html">Про мене</a></li>
+                <li><a href="../practices.html">Практичні роботи</a></li>
+                <li><a href="../labs.html">Лабораторні заняття</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Форма реєстрації</h2>
+
+            <form action="https://webhook.site/edec1ce0-f8bb-48c3-b812-9cd7e824bf46" method="POST">
+
+                <div class="form-group">
+                    <label for="firstname">Ім'я:</label>
+                    <input type="text" id="firstname" name="firstname" required placeholder="Введіть ваше ім'я">
+                </div>
+
+                <div class="form-group">
+                    <label for="lastname">Прізвище:</label>
+                    <input type="text" id="lastname" name="lastname" required placeholder="Введіть ваше прізвище">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Електронна пошта:</label>
+                    <input type="email" id="email" name="email" required placeholder="example@mail.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Пароль:</label>
+                    <input type="password" id="password" name="password" required minlength="6">
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm_password">Підтвердження паролю:</label>
+                    <input type="password" id="confirm_password" name="confirm_password" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="dob">Дата народження:</label>
+                    <input type="date" id="dob" name="dob">
+                </div>
+
+                <div class="form-group">
+                    <label>Стать:</label>
+                    <label style="display:inline; font-weight:normal;">
+                        <input type="radio" name="gender" value="male"> Чоловіча
+                    </label>
+                    <label style="display:inline; font-weight:normal; margin-left: 10px;">
+                        <input type="radio" name="gender" value="female"> Жіноча
+                    </label>
+                </div>
+
+                <button type="submit">Зареєструватися</button>
+            </form>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Гліб Осьмаков. Всі права захищені.</p>
+        <p>
+            <strong>Контакти:</strong>
+            <a href="tel:+380660585758">+38 (066) 058-57-58</a> |
+            <a href="mailto:to.glebo@gmail.com">Email</a>
+        </p>
+        <p>
+            <a href="https://github.com/osmhlib/osmakov_web" target="_blank" rel="noopener noreferrer">Репозиторій на GitHub</a>
+        </p>
+    </footer>
+
+</body>
+</html>
