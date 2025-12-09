@@ -1,0 +1,259 @@
+/* --- ГЛОБАЛЬНІ ЗМІННІ --- */
+:root {
+    --yt-bg: #f9f9f9;
+    --yt-sidebar-bg: #ffffff;
+    --yt-text-main: #0f0f0f;
+    --yt-text-secondary: #606060;
+    --yt-hover: #f2f2f2;
+    --yt-border: #e5e5e5;
+    --yt-accent: #065fd4; /* Синій для посилань */
+}
+
+/* --- СКИДАННЯ СТИЛІВ --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: var(--yt-bg);
+    color: var(--yt-text-main);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- СТИЛІЗАЦІЯ HEADER ТА FOOTER (Ваші стандартні) --- */
+header {
+    background-color: var(--yt-sidebar-bg);
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--yt-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+    header h1 {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    header nav ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+    }
+
+    header a, footer a {
+        text-decoration: none;
+        color: var(--yt-text-main);
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+
+footer {
+    background-color: var(--yt-sidebar-bg);
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid var(--yt-border);
+    margin-top: auto;
+}
+
+/* --- ГОЛОВНИЙ МАКЕТ (FLEXBOX) --- */
+.youtube-layout {
+    display: flex;
+    flex: 1; /* Розтягується на всю доступну висоту */
+    max-width: 100%; /* Займає всю ширину */
+}
+
+/* --- 1. SIDEBAR (БІЧНА ПАНЕЛЬ) --- */
+.sidebar {
+    width: 240px;
+    flex-shrink: 0; /* Не стискається */
+    background-color: var(--yt-sidebar-bg);
+    height: calc(100vh - 60px); /* Висота екрану мінус хедер */
+    position: sticky;
+    top: 60px; /* Висота хедера */
+    overflow-y: auto;
+    padding: 12px;
+}
+
+.nav-block {
+    margin-bottom: 10px;
+}
+
+.nav-title {
+    font-size: 1rem;
+    padding: 8px 12px;
+    margin-top: 10px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: var(--yt-text-main);
+    font-size: 0.9rem;
+    border-radius: 10px;
+    margin-bottom: 4px;
+}
+
+    .nav-item:hover {
+        background-color: var(--yt-hover);
+    }
+
+    .nav-item.active {
+        background-color: var(--yt-hover);
+        font-weight: 600;
+    }
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--yt-border);
+    margin: 10px 0;
+}
+
+/* --- 2. КОНТЕНТ (ПРАВА ЧАСТИНА) --- */
+.content-area {
+    flex-grow: 1;
+    padding: 20px 24px;
+    width: calc(100% - 240px); /* Ширина мінус сайдбар */
+}
+
+/* Категорії */
+.categories-bar {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+}
+
+.category-btn {
+    padding: 6px 12px;
+    background-color: rgba(0, 0, 0, 0.05);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: background-color 0.2s;
+}
+
+    .category-btn:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .category-btn.active {
+        background-color: var(--yt-text-main);
+        color: white;
+    }
+
+/* --- 3. СІТКА ВІДЕО --- */
+.video-grid {
+    display: flex;
+    flex-wrap: wrap; /* Дозволяє перенос карток */
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+/* --- 4. КАРТКА ВІДЕО --- */
+.video-card {
+    flex: 1 1 300px;
+    max-width: 300px; /* Максимальна ширина картки */
+    cursor: pointer;
+}
+
+/* Контейнер для прев'ю */
+.thumbnail-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.thumbnail {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9; /* Співвідношення сторін як у відео */
+    border-radius: 12px;
+    object-fit: cover;
+    background-color: #ccc; /* Заглушка, якщо картинка не завантажилась */
+    display: block;
+}
+
+.duration {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 3px 4px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+/* Інформація про відео */
+.video-info {
+    display: flex; /* Flex для аватара і тексту */
+    gap: 12px;
+}
+
+.channel-icon {
+    width: 36px;
+    height: 36px;
+    background-color: #ddd;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.text-info {
+    display: flex;
+    flex-direction: column; /* Вертикальне вирівнювання тексту */
+}
+
+.video-title {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 4px;
+    color: var(--yt-text-main);
+    /* Обмеження до 2 рядків */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.channel-name, .views {
+    font-size: 0.85rem;
+    color: var(--yt-text-secondary);
+    margin-bottom: 2px;
+}
+
+    .channel-name:hover {
+        color: var(--yt-text-main);
+    }
+
+/* --- АДАПТИВНІСТЬ --- */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none; /* Приховуємо сайдбар на планшетах */
+    }
+
+    .content-area {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .video-card {
+        max-width: 100%; /* Картка на всю ширину на мобільному */
+    }
+}
