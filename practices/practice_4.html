@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Практична 4: Grid Keyboard</title>
+    <title>Практична 4: Staggered Grid Keyboard</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles_pr4.css">
 </head>
@@ -28,88 +28,79 @@
             <div class="keyboard-container">
                 <div class="keyboard-grid">
 
-                    <div class="key key-esc">Esc</div>
-                    <div class="spacer"></div>
-                    <div class="key">F1</div><div class="key">F2</div><div class="key">F3</div><div class="key">F4</div>
-                    <div class="spacer"></div>
-                    <div class="key">F5</div><div class="key">F6</div><div class="key">F7</div><div class="key">F8</div>
-                    <div class="spacer"></div>
-                    <div class="key">F9</div><div class="key">F10</div><div class="key">F11</div><div class="key">F12</div>
-                    <div class="spacer"></div>
-                    <div class="key">Prt</div><div class="key">Scr</div><div class="key">Pau</div>
-                    <div class="spacer"></div>
-                    <div class="key hidden"></div><div class="key hidden"></div><div class="key hidden"></div><div class="key hidden"></div>
+                    <div class="key key-esc span-4">Esc</div>
+                    <div class="spacer span-4"></div> <div class="key span-4">F1</div><div class="key span-4">F2</div><div class="key span-4">F3</div><div class="key span-4">F4</div>
+                    <div class="spacer span-2"></div> <div class="key span-4">F5</div><div class="key span-4">F6</div><div class="key span-4">F7</div><div class="key span-4">F8</div>
+                    <div class="spacer span-2"></div> <div class="key span-4">F9</div><div class="key span-4">F10</div><div class="key span-4">F11</div><div class="key span-4">F12</div>
 
-                    <div class="key">~</div>
-                    <div class="key">1</div><div class="key">2</div><div class="key">3</div><div class="key">4</div>
-                    <div class="key">5</div><div class="key">6</div><div class="key">7</div><div class="key">8</div>
-                    <div class="key">9</div><div class="key">0</div>
-                    <div class="key">-</div><div class="key">=</div>
-                    <div class="key key-special span-3">Back</div>
+                    <div class="spacer span-2"></div> <div class="key span-4">Prt</div><div class="key span-4">Scr</div><div class="key span-4">Pau</div>
 
-                    <div class="spacer"></div>
-                    <div class="key">Ins</div><div class="key">Hom</div><div class="key">PgU</div>
-                    <div class="spacer"></div>
-                    <div class="key">Num</div><div class="key">/</div><div class="key">*</div><div class="key">-</div>
+                    <div class="spacer span-2"></div> <div class="hidden span-16"></div> <div class="key span-4">~</div>
+                    <div class="key span-4">1</div><div class="key span-4">2</div><div class="key span-4">3</div><div class="key span-4">4</div>
+                    <div class="key span-4">5</div><div class="key span-4">6</div><div class="key span-4">7</div><div class="key span-4">8</div>
+                    <div class="key span-4">9</div><div class="key span-4">0</div>
+                    <div class="key span-4">-</div><div class="key span-4">=</div>
+                    <div class="key key-special span-8">Back</div> <div class="spacer span-2"></div>
+                    <div class="key span-4">Ins</div><div class="key span-4">Hom</div><div class="key span-4">PgU</div>
 
-                    <div class="key key-special span-2">Tab</div>
-                    <div class="key">Q</div><div class="key">W</div><div class="key">E</div><div class="key">R</div>
-                    <div class="key">T</div><div class="key">Y</div><div class="key">U</div><div class="key">I</div>
-                    <div class="key">O</div><div class="key">P</div>
-                    <div class="key">[</div><div class="key">]</div>
-                    <div class="key key-special span-2">\</div>
+                    <div class="spacer span-2"></div>
+                    <div class="key span-4">Num</div><div class="key span-4">/</div><div class="key span-4">*</div><div class="key span-4">-</div>
 
-                    <div class="spacer"></div>
-                    <div class="key">Del</div><div class="key">End</div><div class="key">PgD</div>
-                    <div class="spacer"></div>
-                    <div class="key">7</div><div class="key">8</div><div class="key">9</div>
-                    <div class="key key-plus span-v-2">+</div>
+                    <div class="key key-special span-6">Tab</div> <div class="key span-4">Q</div><div class="key span-4">W</div><div class="key span-4">E</div><div class="key span-4">R</div>
+                    <div class="key span-4">T</div><div class="key span-4">Y</div><div class="key span-4">U</div><div class="key span-4">I</div>
+                    <div class="key span-4">O</div><div class="key span-4">P</div>
+                    <div class="key span-4">[</div><div class="key span-4">]</div>
+                    <div class="key key-special span-6">\</div> <div class="spacer span-2"></div>
+                    <div class="key span-4">Del</div><div class="key span-4">End</div><div class="key span-4">PgD</div>
 
-                    <div class="key key-caps span-2">Caps</div>
-                    <div class="key">A</div><div class="key">S</div><div class="key">D</div><div class="key">F</div>
-                    <div class="key">G</div><div class="key">H</div><div class="key">J</div><div class="key">K</div>
-                    <div class="key">L</div>
-                    <div class="key">;</div><div class="key">'</div>
-                    <div class="key key-enter span-3">Enter</div>
+                    <div class="spacer span-2"></div>
+                    <div class="key span-4">7</div><div class="key span-4">8</div><div class="key span-4">9</div>
+                    <div class="key key-plus span-v-2 span-4">+</div>
 
-                    <div class="spacer"></div>
-                    <div class="key hidden"></div><div class="key hidden"></div><div class="key hidden"></div>
-                    <div class="spacer"></div>
-                    <div class="key">4</div><div class="key">5</div><div class="key">6</div>
-                    <div class="key key-shift span-2">Shift</div>
-                    <div class="key">Z</div><div class="key">X</div><div class="key">C</div><div class="key">V</div>
-                    <div class="key">B</div><div class="key">N</div><div class="key">M</div>
-                    <div class="key">,</div><div class="key">.</div><div class="key">/</div>
-                    <div class="key key-shift span-4">Shift</div>
+                    <div class="key key-caps span-7">Caps</div> <div class="key span-4">A</div><div class="key span-4">S</div><div class="key span-4">D</div><div class="key span-4">F</div>
+                    <div class="key span-4">G</div><div class="key span-4">H</div><div class="key span-4">J</div><div class="key span-4">K</div>
+                    <div class="key span-4">L</div>
+                    <div class="key span-4">;</div><div class="key span-4">'</div>
+                    <div class="key key-enter span-9">Enter</div> <div class="spacer span-2"></div>
+                    <div class="hidden span-12"></div> <div class="spacer span-2"></div>
+                    <div class="key span-4">4</div><div class="key span-4">5</div><div class="key span-4">6</div>
+                    <div class="key key-shift span-9">Shift</div> <div class="key span-4">Z</div><div class="key span-4">X</div><div class="key span-4">C</div><div class="key span-4">V</div>
+                    <div class="key span-4">B</div><div class="key span-4">N</div><div class="key span-4">M</div>
+                    <div class="key span-4">,</div><div class="key span-4">.</div><div class="key span-4">/</div>
+                    <div class="key key-shift span-11">Shift</div> <div class="spacer span-2"></div>
+                    <div class="hidden span-4"></div><div class="key span-4">↑</div><div class="hidden span-4"></div>
 
-                    <div class="spacer"></div>
-                    <div class="key hidden"></div><div class="key">↑</div><div class="key hidden"></div>
-                    <div class="spacer"></div>
-                    <div class="key">1</div><div class="key">2</div><div class="key">3</div>
-                    <div class="key key-enter-num span-v-2">Ent</div>
+                    <div class="spacer span-2"></div>
+                    <div class="key span-4">1</div><div class="key span-4">2</div><div class="key span-4">3</div>
+                    <div class="key key-enter-num span-v-2 span-4">Ent</div>
 
-                    <div class="key key-ctrl span-2">Ctrl</div>
-                    <div class="key span-2">Win</div>
-                    <div class="key span-2">Alt</div>
+                    <div class="key key-ctrl span-5">Ctrl</div> <div class="key span-5">Win</div>
+                    <div class="key span-5">Alt</div>
+                    <div class="key key-space span-25"></div> <div class="key span-5">Alt</div>
+                    <div class="key span-5">Fn</div>
+                    <div class="key span-5">Men</div>
+                    <div class="key key-ctrl span-5">Ctrl</div>
 
-                    <div class="key key-space span-5"></div>
+                    <div class="spacer span-2"></div>
+                    <div class="key span-4">←</div><div class="key span-4">↓</div><div class="key span-4">→</div>
 
-                    <div class="key span-2">Alt</div>
-                    <div class="key">Fn</div>
-                    <div class="key key-ctrl span-2">Ctrl</div>
-
-                    <div class="spacer"></div>
-                    <div class="key">←</div><div class="key">↓</div><div class="key">→</div>
-
-                    <div class="spacer"></div>
-                    <div class="key span-2">0</div><div class="key">.</div>
+                    <div class="spacer span-2"></div>
+                    <div class="key span-8">0</div><div class="key span-4">.</div>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Гліб Осьмаков.</p>
+        <p>&copy; 2025 Гліб Осьмаков. Всі права захищені.</p>
+        <p>
+            <strong>Контакти:</strong>
+            <a href="tel:+380660585758">+38 (066) 058-57-58</a> |
+            <a href="mailto:to.glebo@gmail.com">Email</a>
+        </p>
+        <p>
+            <a href="https://github.com/osmhlib/osmakov_web" target="_blank" rel="noopener noreferrer">Репозиторій на GitHub</a>
+        </p>
     </footer>
 
 </body>

@@ -3,11 +3,11 @@
 /* --- ЗМІННІ --- */
 :root {
     --kb-bg: #111;
-    --key-default: #222;
+    --key-default: #333;
     --key-active: #00d4ff;
     --key-text: #eee;
     --key-shadow: #000;
-    --key-special: #2d2d2d;
+    --key-special: #222; /* Темніші службові клавіші */
     --key-esc: #aa0000;
 }
 
@@ -25,7 +25,6 @@ main {
 .keyboard-section {
     text-align: center;
     min-width: 1100px;
-    /* Забезпечуємо, щоб секція не вилазила за межі */
     max-width: 100%;
     box-sizing: border-box;
 }
@@ -38,38 +37,31 @@ main {
         text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
     }
 
-/* Контейнер */
-.scroll-wrapper {
+.keyboard-container {
     display: flex;
-    justify-content: center; /* Центруємо клавіатуру */
+    justify-content: center;
     width: 100%;
-    /* Додаємо невеликі відступи, щоб краї не обрізалися */
+    overflow-x: auto;
     padding: 10px;
-    box-sizing: border-box;
 }
 
 /* --- СІТКА КЛАВІАТУРИ --- */
 .keyboard-grid {
     display: grid;
-    /* КЛЮЧОВА ЗМІНА: 1fr замість px. Кнопки самі підлаштуються під ширину */
-    grid-template-columns: repeat(25, 1fr);
-    /* Висоту рядків трохи зменшуємо для компактності */
+    /* 92 дрібні колонки для точного позиціонування */
+    grid-template-columns: repeat(92, 1fr);
     grid-template-rows: repeat(6, 45px);
-    gap: 4px; /* Менші проміжки */
+    gap: 4px; /* Маленькі проміжки */
 
     background-color: var(--kb-bg);
     padding: 15px;
     border-radius: 10px;
     border-bottom: 10px solid #000;
     box-shadow: 0 20px 50px rgba(0,0,0,0.8), inset 0 0 20px rgba(0,0,0,0.5);
-    /* РОЗМІРИ */
     width: 100%;
-    max-width: 1250px; /* Максимальна ширина для ПК */
-    /* Мінімальна ширина, щоб текст всередині кнопок не ламався */
-    /* На телефонах з'явиться скрол, на ноутбуках - ні */
-    min-width: 800px;
+    max-width: 1400px; /* Ширина для повної клавіатури */
+    min-width: 1000px; /* Щоб не ламалася */
     margin: 0 auto;
-    box-sizing: border-box;
 }
 
 /* --- СТИЛЬ КЛАВІШІ --- */
@@ -77,7 +69,6 @@ main {
     background-color: var(--key-default);
     color: var(--key-text);
     font-family: 'Roboto Mono', monospace;
-    /* Адаптивний шрифт: трохи менший, щоб влазити */
     font-size: 0.75rem;
     font-weight: 500;
     border-radius: 4px;
@@ -92,13 +83,13 @@ main {
     transition: all 0.05s ease;
     position: relative;
     top: 0;
-    overflow: hidden; /* Ховає текст, якщо він не влазить */
     white-space: nowrap;
+    overflow: hidden;
 }
 
     /* Ховер */
     .key:hover {
-        background-color: #333;
+        background-color: #444;
         color: #fff;
         box-shadow: 0 3px 0 var(--key-shadow), 0 0 10px rgba(0, 212, 255, 0.2);
         z-index: 2;
@@ -129,9 +120,9 @@ main {
         background-color: #33e0ff;
     }
 
-.key-backspace, .key-tab, .key-caps, .key-shift, .key-ctrl, .key-alt {
+.key-special, .key-backspace, .key-tab, .key-caps, .key-shift, .key-ctrl, .key-alt {
     background-color: var(--key-special);
-    font-size: 0.7rem; /* Ще менший шрифт для довгих слів */
+    font-size: 0.7rem;
 }
 
 .key-space {
@@ -143,40 +134,61 @@ main {
         background-color: #fff;
     }
 
-/* Приховані елементи */
-.spacer {
-    pointer-events: none;
-}
-
 .hidden {
     visibility: hidden;
     pointer-events: none;
 }
 
-/* --- ОБ'ЄДНАННЯ (SPANS) --- */
-.span-2 {
-    grid-column: span 2;
+.spacer {
+    pointer-events: none;
 }
 
-.span-3 {
-    grid-column: span 3;
+/* --- ОБ'ЄДНАННЯ (SPANS) --- */
+/* Тут ми задаємо ширину в дрібних колонках */
+.span-2 {
+    grid-column: span 2;
 }
 
 .span-4 {
     grid-column: span 4;
 }
-
+/* Стандартна 1u */
 .span-5 {
     grid-column: span 5;
 }
-
+/* 1.25u */
+.span-6 {
+    grid-column: span 6;
+}
+/* 1.5u */
 .span-7 {
     grid-column: span 7;
 }
-
+/* 1.75u */
 .span-8 {
     grid-column: span 8;
 }
+/* 2u */
+.span-9 {
+    grid-column: span 9;
+}
+/* 2.25u */
+.span-11 {
+    grid-column: span 11;
+}
+/* 2.75u */
+.span-12 {
+    grid-column: span 12;
+}
+
+.span-16 {
+    grid-column: span 16;
+}
+
+.span-25 {
+    grid-column: span 25;
+}
+/* Space 6.25u */
 
 /* Вертикальне об'єднання */
 .span-v-2 {
