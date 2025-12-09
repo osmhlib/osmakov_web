@@ -7,11 +7,10 @@
     --key-active: #00d4ff;
     --key-text: #eee;
     --key-shadow: #000;
-    --key-special: #222; /* Темніші службові клавіші */
+    --key-special: #222; 
     --key-esc: #aa0000;
 }
 
-/* Центрування */
 main {
     display: flex;
     justify-content: center;
@@ -48,10 +47,10 @@ main {
 /* --- СІТКА КЛАВІАТУРИ --- */
 .keyboard-grid {
     display: grid;
-    /* 92 дрібні колонки для точного позиціонування */
+    /* 92 колонки */
     grid-template-columns: repeat(92, 1fr);
     grid-template-rows: repeat(6, 45px);
-    gap: 4px; /* Маленькі проміжки */
+    gap: 4px; 
 
     background-color: var(--kb-bg);
     padding: 15px;
@@ -59,8 +58,7 @@ main {
     border-bottom: 10px solid #000;
     box-shadow: 0 20px 50px rgba(0,0,0,0.8), inset 0 0 20px rgba(0,0,0,0.5);
     width: 100%;
-    max-width: 1400px; /* Ширина для повної клавіатури */
-    min-width: 1000px; /* Щоб не ламалася */
+    max-width: 1400px;
     margin: 0 auto;
 }
 
@@ -143,8 +141,7 @@ main {
     pointer-events: none;
 }
 
-/* --- ОБ'ЄДНАННЯ (SPANS) --- */
-/* Тут ми задаємо ширину в дрібних колонках */
+/* --- SPANS --- */
 .span-2 {
     grid-column: span 2;
 }

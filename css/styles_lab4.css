@@ -1,0 +1,251 @@
+@import "styles_main.css";
+
+/* --- ГЛОБАЛЬНІ ЗМІННІ --- */
+:root {
+    --planner-bg: #111;
+    --planner-border: #333;
+    --planner-accent: #00d4ff;
+    --planner-text: #eee;
+    --planner-input-bg: #1a1a1a;
+}
+
+/* Центрування та розтягування на весь екран */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; 
+    height: calc(100vh - 160px);
+    min-height: 600px; 
+    width: 100%;
+    padding: 10px; 
+    background-color: #050505;
+    box-sizing: border-box;
+}
+
+/* Контейнер планера */
+.planner-wrapper {
+    width: 100%;
+    max-width: none; 
+    height: 100%; 
+
+    background-color: var(--planner-bg);
+    border: 2px solid var(--planner-accent);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.15);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+/* --- HEADER --- */
+.planner-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 2px solid var(--planner-border);
+    padding-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+    flex-shrink: 0; 
+}
+
+.main-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    color: var(--planner-text);
+    margin: 0;
+    line-height: 1;
+}
+
+.header-inputs {
+    display: flex;
+    gap: 30px;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.input-group {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+    .input-group label {
+        font-family: 'Orbitron', sans-serif;
+        color: var(--planner-accent);
+        font-size: 0.9rem;
+        margin: 0;
+    }
+
+    .input-group input {
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid var(--planner-text);
+        color: var(--planner-text);
+        font-family: 'Roboto Mono', monospace;
+        width: 150px;
+        padding: 5px;
+    }
+
+        .input-group input:focus {
+            outline: none;
+            border-bottom-color: var(--planner-accent);
+        }
+
+.header-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* --- GRID --- */
+.planner-grid {
+    display: grid;
+
+    grid-template-columns: 1.2fr 1fr 1fr 1fr;
+    /* 2 ряди для днів */
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    flex-grow: 1; 
+    overflow: hidden; 
+}
+
+/* --- САЙДБАР --- */
+.sidebar-list {
+    grid-row: 1 / span 2;
+    border-right: 2px solid var(--planner-border);
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+}
+
+.list-section h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    color: var(--planner-text);
+    border-bottom: 1px solid var(--planner-border);
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+.list-section.grow {
+    flex-grow: 1;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+    .task-item input[type="checkbox"] {
+        accent-color: var(--planner-accent);
+        cursor: pointer;
+        width: 16px;
+        height: 16px;
+    }
+
+    .task-item input[type="text"] {
+        width: 100%;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid #333;
+        color: #ccc;
+        font-family: 'Roboto Mono', monospace;
+        font-size: 0.9rem;
+    }
+
+        .task-item input[type="text"]:focus {
+            outline: none;
+            border-bottom-color: var(--planner-accent);
+        }
+
+/* --- БЛОКИ ДНІВ --- */
+.day-box {
+    border: 1px solid var(--planner-border);
+    background-color: var(--planner-input-bg);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+    .day-box h3, .sub-day h3 {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 0.9rem;
+        color: var(--planner-text);
+        margin: 0 0 10px 0;
+        text-align: right;
+    }
+
+    .day-box textarea, .sub-day textarea {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        border: none;
+        color: var(--planner-text);
+        resize: none;
+        font-family: 'Roboto Mono', monospace;
+        line-height: 1.5;
+        font-size: 1rem;
+    }
+
+        .day-box textarea:focus, .sub-day textarea:focus {
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+/* --- ВИХІДНІ --- */
+.weekend-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+}
+
+.sub-day {
+    border: 1px solid var(--planner-border);
+    background-color: var(--planner-input-bg);
+    padding: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- АДАПТИВНІСТЬ --- */
+@media (max-width: 1000px) {
+    main {
+        height: auto; 
+    }
+
+    .planner-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto; 
+    }
+
+    .sidebar-list {
+        grid-row: auto;
+        grid-column: 1 / -1;
+        border-right: none;
+        border-bottom: 2px solid var(--planner-border);
+        padding-bottom: 20px;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .planner-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .planner-grid {
+        grid-template-columns: 1fr;
+    }
+}
