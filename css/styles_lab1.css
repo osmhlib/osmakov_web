@@ -1,0 +1,184 @@
+/* --- ІМПОРТ ЗАГАЛЬНОГО СТИЛЮ --- */
+@import "styles_main.css";
+
+/* --- ДОДАТКОВІ ЗМІННІ --- */
+:root {
+    --bg-input: #1a1a1a; /* Фон полів вводу */
+    --text-placeholder: #666666;
+    --error-color: #ff3333; /* Для валідації */
+    --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.5); /* Глибока тінь */
+}
+
+/* Перевизначаємо main лише для цієї сторінки, щоб відцентрувати форму */
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 160px); /* Висота екрану мінус хедер і футер */
+    width: 100%; 
+    max-width: 100%; 
+}
+
+/* --- СТИЛІЗАЦІЯ ФОРМИ --- */
+form {
+    background-color: var(--bg-panel);
+    color: var(--text-main);
+    width: 100%;
+    max-width: 450px;
+    padding: 30px 50px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-card);
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+}
+
+    /* Декоративна лінія зверху форми */
+    form::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+    }
+
+/* Заголовки всередині форми */
+section h2 {
+    color: var(--accent-color);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+/* Групи полів */
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Мітки (Labels) */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+/* Поля вводу (Input) */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"] {
+    width: 100%;
+    padding: 15px 150px 15px 15px;
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--text-header);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Стан фокусу для полів */
+input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 8px rgba(0, 212, 255, 0.3);
+    background-color: #222;
+}
+
+/* Плейсхолдери */
+::placeholder {
+    color: var(--text-placeholder);
+}
+
+/* Радіо-кнопки (Стать) */
+input[type="radio"] {
+    margin-right: 5px;
+    accent-color: var(--accent-color);
+    vertical-align: middle;
+}
+
+/* Кнопка відправки та кнопка "Назад" */
+button[type="submit"], .btn-back {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 30px;
+    background: transparent;
+    color: var(--accent-color);
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid var(--accent-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+}
+
+    button[type="submit"]:hover, .btn-back:hover {
+        background-color: var(--accent-color);
+        color: #000;
+        box-shadow: var(--glow);
+        transform: translateY(-2px);
+        text-decoration: none;
+    }
+
+button:disabled {
+    border-color: #555;
+    color: #555;
+    cursor: not-allowed;
+    background: transparent;
+    box-shadow: none;
+    transform: none;
+}
+
+/* Посилання "Назад" над формою */
+.back-link {
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+    .back-link:hover {
+        color: var(--accent-color);
+    }
+
+/* --- СТИЛІ ДЛЯ СТОРІНКИ УСПІХУ --- */
+.success-message {
+    text-align: center;
+    background-color: var(--bg-panel);
+    padding: 50px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-card);
+    max-width: 600px;
+    margin: 20px;
+}
+
+.icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+}
+
+/* --- СТИЛІЗАЦІЯ ІКОНКИ КАЛЕНДАРЯ --- */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+    margin-right: -135px;
+}
