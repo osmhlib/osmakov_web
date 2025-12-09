@@ -71,7 +71,7 @@
         <section>
             <h2>Форма реєстрації</h2>
 
-            <form action="https://webhook.site/edec1ce0-f8bb-48c3-b812-9cd7e824bf46" method="POST">
+            <form id="registrationForm" method="POST">
 
                 <div class="form-group">
                     <label for="firstname">Ім'я:</label>
@@ -113,7 +113,7 @@
                     </label>
                 </div>
 
-                <button type="submit">Зареєструватися</button>
+                <button type="submit" id="submitBtn">Зареєструватися</button>
             </form>
 
         </section>
@@ -130,6 +130,35 @@
             <a href="https://github.com/osmhlib/osmakov_web" target="_blank" rel="noopener noreferrer">Репозиторій на GitHub</a>
         </p>
     </footer>
+
+    <script>
+    const WEBHOOK_URL = 'https://webhook.site/edec1ce0-f8bb-48c3-b812-9cd7e824bf46';
+
+    const form = document.getElementById('registrationForm');
+    const submitBtn = document.getElementById('submitBtn');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Відправка...';
+
+        const formData = new FormData(form);
+
+        fetch(WEBHOOK_URL, {
+            method: 'POST',
+            body: formData,
+            mode: 'no-cors'
+        })
+        .then(() => {
+            window.location.href = 'lab_1_success_reg.html';
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Зареєструватися';
+        });
+    });
+    </script>
 
 </body>
 </html>
