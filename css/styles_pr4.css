@@ -1,0 +1,185 @@
+@import "styles_main.css";
+
+/* --- ЗМІННІ --- */
+:root {
+    --kb-bg: #111;
+    --key-default: #222;
+    --key-active: #00d4ff;
+    --key-text: #eee;
+    --key-shadow: #000;
+    --key-special: #2d2d2d;
+    --key-esc: #aa0000;
+}
+
+/* Центрування */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 160px);
+    min-width: 1200px;
+    padding: 20px;
+    background-color: #080808;
+}
+
+.keyboard-section {
+    text-align: center;
+    min-width: 1100px;
+    /* Забезпечуємо, щоб секція не вилазила за межі */
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+    .keyboard-section h2 {
+        font-family: 'Orbitron', sans-serif;
+        color: var(--key-active);
+        letter-spacing: 4px;
+        margin-bottom: 20px;
+        text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+    }
+
+/* Контейнер */
+.scroll-wrapper {
+    display: flex;
+    justify-content: center; /* Центруємо клавіатуру */
+    width: 100%;
+    /* Додаємо невеликі відступи, щоб краї не обрізалися */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* --- СІТКА КЛАВІАТУРИ --- */
+.keyboard-grid {
+    display: grid;
+    /* КЛЮЧОВА ЗМІНА: 1fr замість px. Кнопки самі підлаштуються під ширину */
+    grid-template-columns: repeat(25, 1fr);
+    /* Висоту рядків трохи зменшуємо для компактності */
+    grid-template-rows: repeat(6, 45px);
+    gap: 4px; /* Менші проміжки */
+
+    background-color: var(--kb-bg);
+    padding: 15px;
+    border-radius: 10px;
+    border-bottom: 10px solid #000;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8), inset 0 0 20px rgba(0,0,0,0.5);
+    /* РОЗМІРИ */
+    width: 100%;
+    max-width: 1250px; /* Максимальна ширина для ПК */
+    /* Мінімальна ширина, щоб текст всередині кнопок не ламався */
+    /* На телефонах з'явиться скрол, на ноутбуках - ні */
+    min-width: 800px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* --- СТИЛЬ КЛАВІШІ --- */
+.key {
+    background-color: var(--key-default);
+    color: var(--key-text);
+    font-family: 'Roboto Mono', monospace;
+    /* Адаптивний шрифт: трохи менший, щоб влазити */
+    font-size: 0.75rem;
+    font-weight: 500;
+    border-radius: 4px;
+    /* Тінь 3D */
+    box-shadow: 0 3px 0 var(--key-shadow), 0 4px 4px rgba(0,0,0,0.3);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.05s ease;
+    position: relative;
+    top: 0;
+    overflow: hidden; /* Ховає текст, якщо він не влазить */
+    white-space: nowrap;
+}
+
+    /* Ховер */
+    .key:hover {
+        background-color: #333;
+        color: #fff;
+        box-shadow: 0 3px 0 var(--key-shadow), 0 0 10px rgba(0, 212, 255, 0.2);
+        z-index: 2;
+    }
+
+    /* Натискання */
+    .key:active {
+        top: 3px;
+        box-shadow: 0 0 0 var(--key-shadow);
+        background-color: #151515;
+        color: var(--key-active);
+    }
+
+/* --- СПЕЦІАЛЬНІ КЛАВІШІ --- */
+.key-esc {
+    background-color: #3a1111;
+    color: #ff5555;
+    font-weight: bold;
+}
+
+.key-enter, .key-enter-num {
+    background-color: var(--key-active);
+    color: #000;
+    box-shadow: 0 3px 0 #008fb3;
+}
+
+    .key-enter:hover, .key-enter-num:hover {
+        background-color: #33e0ff;
+    }
+
+.key-backspace, .key-tab, .key-caps, .key-shift, .key-ctrl, .key-alt {
+    background-color: var(--key-special);
+    font-size: 0.7rem; /* Ще менший шрифт для довгих слів */
+}
+
+.key-space {
+    background-color: #bbb;
+    box-shadow: 0 3px 0 #888;
+}
+
+    .key-space:active {
+        background-color: #fff;
+    }
+
+/* Приховані елементи */
+.spacer {
+    pointer-events: none;
+}
+
+.hidden {
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* --- ОБ'ЄДНАННЯ (SPANS) --- */
+.span-2 {
+    grid-column: span 2;
+}
+
+.span-3 {
+    grid-column: span 3;
+}
+
+.span-4 {
+    grid-column: span 4;
+}
+
+.span-5 {
+    grid-column: span 5;
+}
+
+.span-7 {
+    grid-column: span 7;
+}
+
+.span-8 {
+    grid-column: span 8;
+}
+
+/* Вертикальне об'єднання */
+.span-v-2 {
+    grid-row: span 2;
+    height: auto;
+}
