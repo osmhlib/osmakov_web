@@ -1,0 +1,308 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пр. 1: Розклад занять | Гліб Осьмаков</title>
+    <style>
+        /* Базові CSS стилі 
+            тимчасово?
+        */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px 5px;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 1.3;
+        }
+
+        thead th {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+        }
+
+        tbody th {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+        }
+
+        .day-header {
+            background-color: #d1e7ff;
+            font-weight: bold;
+        }
+
+        .time {
+            white-space: nowrap;
+            font-weight: bold;
+        }
+
+        .empty-cell {
+            background-color: #f8f8f8;
+            color: #999;
+            font-style: italic;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Мій персональний сайт</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Головна</a></li>
+                <li><a href="../about.html">Про мене</a></li>
+                <li><a href="../practices.html">Практичні роботи</a></li>
+                <li><a href="../labs.html">Лабораторні заняття</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Практична робота №1: Розклад занять</h2>
+            <p>Розклад занять групи ТЦР-21 на період з 01.12.2025 по 28.12.2025.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="6">Розклад занять (Грудень 2025)</th>
+                    </tr>
+                    <tr>
+                        <th rowspan="2">День</th>
+                        <th rowspan="2">Час пари</th>
+                        <th>01.12.2025</th>
+                        <th>08.12.2025</th>
+                        <th>15.12.2025</th>
+                        <th>22.12.2025</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td rowspan="5" class="day-header">Пн</td>
+                        <td class="time">1 пара<br>08:00-09:35</td>
+                        <td>ООП-15 [Лк]<br>Гавор А.С.<br>ауд. Дистанц.</td>
+                        <td>АВПЗ-24 [Лк]<br>Сватко В.В.<br>ауд. Дистанц.</td>
+                        <td class="empty-cell"></td>
+                        <td class="empty-cell"></td>
+                    </tr>
+                    <tr>
+                        <td class="time">2 пара<br>09:45-11:20</td>
+                        <td>ООП-15 [Лк]<br>Гавор А.С.<br>ауд. Дистанц.</td>
+                        <td>ВМ [Лк т.21/з.12]<br>Білоусова С.В.<br>ауд. Дистанц.</td>
+                        <td class="empty-cell"></td>
+                        <td>ВМ [Екз]<br>Білоусова С.В.<br>ауд. 501</td>
+                    </tr>
+                    <tr>
+                        <td class="time">3 пара<br>11:45-13:20</td>
+                        <td>АВПЗ-24 [Лк]<br>Сватко В.В.<br>ауд. Дистанц.</td>
+                        <td>СП-2024 [Лк т.9/з.9]<br>Бажан Т.О.<br>ауд. Дистанц.</td>
+                        <td class="empty-cell" colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td class="time">4 пара<br>13:30-15:05</td>
+                        <td>УМ-2022 [Лк]<br>Даниленко Л.В.<br>ауд. Дистанц.</td>
+                        <td>WEB тех.-2016 [Лк]<br>Дзюба В.В.<br>ауд. Дистанц.</td>
+                        <td>WEB тех.-2016 [Екз]<br>Дзюба В.В.<br>ауд. 211</td>
+                        <td class="empty-cell"></td>
+                    </tr>
+                    <tr>
+                        <td class="time">5 пара<br>15:15-16:50</td>
+                        <td>ФЛ [Лк]<br>Кошетар У.П.<br>ауд. Дистанц.</td>
+                        <td class="empty-cell" colspan="3"></td>
+                    </tr>
+
+                    <tr>
+                        <th rowspan="2">День</th>
+                        <th rowspan="2">Час пари</th>
+                    </tr>
+                    <tr>
+                        <th>02.12.2025</th>
+                        <th>09.12.2025</th>
+                        <th>16.12.2025</th>
+                        <th>23.12.2025</th>
+                    </tr>
+                    <tr>
+                        <td rowspan="4" class="day-header">Вт</td>
+                        <td class="time">2 пара<br>09:45-11:20</td>
+                        <td>СП-2024 [Лб т.6/з.6]<br>Бажан Т.О.<br>ауд. 201</td>
+                        <td>СП-2024 [Пз т.9/з.9]<br>Бажан Т.О.<br>ауд. 329</td>
+                        <td>СП-2024 [Зач]<br>Бажан Т.О.<br>ауд. 329</td>
+                        <td class="empty-cell"></td>
+                    </tr>
+                    <tr>
+                        <td class="time">3 пара<br>11:45-13:20</td>
+                        <td>ВМ [Пз]<br>Варшамов А.В.<br>ауд. 501</td>
+                        <td>ВМ [Пз]<br>Варшамов А.В.<br>ауд. 501</td>
+                        <td>ООП-15 [Зач]<br>Гавор А.С.<br>ауд. 325</td>
+                        <td class="empty-cell"></td>
+                    </tr>
+                    <tr>
+                        <td class="time">4 пара<br>13:30-15:05</td>
+                        <td>ІМ [Пз т.3/з.4]<br>Донцова О.С.<br>ауд. 329</td>
+                        <td>ІМ [Пз т.3/з.6]<br>Донцова О.С.<br>ауд. 329</td>
+                        <td class="empty-cell" colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td class="time">5 пара<br>15:15-16:50</td>
+                        <td>ВМ [Пз]<br>Варшамов А.В.<br>ауд. 515</td>
+                        <td>ВМ [Пз]<br>Варшамов А.В.<br>ауд. 515</td>
+                        <td class="empty-cell" colspan="2"></td>
+                    </tr>
+
+                    <tr>
+                        <th rowspan="2">День</th>
+                        <th rowspan="2">Час пари</th>
+                    </tr>
+                    <tr>
+                        <th>03.12.2025</th>
+                        <th>10.12.2025</th>
+                        <th>17.12.2025</th>
+                        <th>24.12.2025</th>
+                    </tr>
+                    <tr>
+                        <td rowspan="3" class="day-header">Ср</td>
+                        <td class="time">2 пара<br>09:45-11:20</td>
+                        <td>АВПЗ-24 [Пз]<br>Сватко В.В.<br>ауд. 221</td>
+                        <td class="empty-cell" colspan="3"></td>
+                    </tr>
+                    <tr>
+                        <td class="time">3 пара<br>11:45-13:20</td>
+                        <td>WEB тех.-2016 [Пз]<br>Дзюба В.В.<br>ауд. 211</td>
+                        <td>WEB тех.-2016 [Лб]<br>Дзюба В.В.<br>ауд. 512</td>
+                        <td class="empty-cell" colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td class="time">4 пара<br>13:30-15:05</td>
+                        <td>ВМ [Лб т.18/з.7]<br>Шкапа В.В.<br>ауд. 517</td>
+                        <td>АВПЗ-24 [Пз]<br>Сватко В.В.<br>ауд. 225</td>
+                        <td class="empty-cell"></td>
+                        <td>ФЛ [Екз]<br>Кошетар У.П.<br>ауд. 202</td>
+                    </tr>
+
+                    <tr>
+                        <th rowspan="2">День</th>
+                        <th rowspan="2">Час пари</th>
+                    </tr>
+                    <tr>
+                        <th>04.12.2025</th>
+                        <th>11.12.2025</th>
+                        <th>18.12.2025</th>
+                        <th>25.12.2025</th>
+                    </tr>
+                    <tr>
+                        <td rowspan="2" class="day-header">Чт</td>
+                        <td class="time">2 пара<br>09:45-11:20</td>
+                        <td>ІМ [Пз т.3/з.5]<br>Донцова О.С.<br>ауд. 201</td>
+                        <td>ІМ [Пз т.3/з.7]<br>Донцова О.С.<br>ауд. 201</td>
+                        <td>ІМ [Зач]<br>Донцова О.С.<br>ауд. 202</td>
+                        <td class="empty-cell"></td>
+                    </tr>
+                    <tr>
+                        <td class="time">3 пара<br>11:45-13:20</td>
+                        <td>УМ-2022 [Пз]<br>Даниленко Л.В.<br>ауд. 129</td>
+                        <td>ООП-15 [Пз]<br>Гавор А.С.<br>ауд. 207</td>
+                        <td>УМ-2022 [Зач]<br>Даниленко Л.В.<br>ауд. 129</td>
+                        <td class="empty-cell"></td>
+                    </tr>
+
+                    <tr>
+                        <th rowspan="2">День</th>
+                        <th rowspan="2">Час пари</th>
+                    </tr>
+                    <tr>
+                        <th>05.12.2025</th>
+                        <th>12.12.2025</th>
+                        <th>19.12.2025</th>
+                        <th>26.12.2025</th>
+                    </tr>
+                    <tr>
+                        <td rowspan="4" class="day-header">Пт</td>
+                        <td class="time">1 пара<br>08:00-09:35</td>
+                        <td class="empty-cell"></td>
+                        <td>ООП-15 [Лб]<br>Гавор А.С.<br>ауд. 216</td>
+                        <td class="empty-cell" colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td class="time">2 пара<br>09:45-11:20</td>
+                        <td class="empty-cell"></td>
+                        <td>ООП-15 [Пз]<br>Гавор А.С.<br>ауд. 216</td>
+                        <td>АВПЗ-24 [Екз]<br>Сватко В.В.<br>ауд. 325</td>
+                        <td class="empty-cell"></td>
+                    </tr>
+                    <tr>
+                        <td class="time">3 пара<br>11:45-13:20</td>
+                        <td>ФЛ [Сем]<br>Кошетар У.П.<br>ауд. 510</td>
+                        <td>ВМ [Пз]<br>Варшамов А.В.<br>ауд. 517</td>
+                        <td class="empty-cell" colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td class="time">4 пара<br>13:30-15:05</td>
+                        <td>АВПЗ-24 [Пз]<br>Сватко В.В.<br>ауд. 325</td>
+                        <td class="empty-cell" colspan="3"></td>
+                    </tr>
+
+                    <tr>
+                        <th rowspan="2">День</th>
+                        <th rowspan="2">Час пари</th>
+                    </tr>
+                    <tr>
+                        <th>06.12.2025</th>
+                        <th>13.12.2025</th>
+                        <th>20.12.2025</th>
+                        <th>27.12.2025</th>
+                    </tr>
+                    <tr>
+                        <td rowspan="1" class="day-header">Сб</td>
+                        <td class="time">3 пара<br>11:45-13:20</td>
+                        <td>СП-2024 [Лб т.7/з.7]<br>Бажан Т.О.<br>ауд. Дистанц.</td>
+                        <td>СП-2024 [Лб т.8/з.8]<br>Бажан Т.О.<br>ауд. Дистанц.</td>
+                        <td class="empty-cell" colspan="2"></td>
+                    </tr>
+
+                    <tr>
+                        <th rowspan="2">День</th>
+                        <th rowspan="2">Час пари</th>
+                    </tr>
+                    <tr>
+                        <th>07.12.2025</th>
+                        <th>14.12.2025</th>
+                        <th>21.12.2025</th>
+                        <th>28.12.2025</th>
+                    </tr>
+                    <tr>
+                        <td rowspan="1" class="day-header">Нд</td>
+                        <td class="time">1 пара<br>08:00-09:35</td>
+                        <td class="empty-cell" colspan="4"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><a href="../index.html">← Повернутися на головну</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Гліб Осьмаков. Всі права захищені.</p>
+        <p>
+            <strong>Контакти:</strong>
+            <a href="tel:+380660585758">+38 (066) 058-57-58</a> |
+            <a href="mailto:to.glebo@gmail.com">Email</a>
+        </p>
+        <p>
+            <a href="https://github.com/osmhlib/osmakov_web" target="_blank" rel="noopener noreferrer">Репозиторій на GitHub</a>
+        </p>
+    </footer>
+
+</body>
+</html>
