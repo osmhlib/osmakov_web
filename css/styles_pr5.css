@@ -18,22 +18,30 @@ a {
     color: inherit;
 }
 
+img {
+    max-width: 100%;
+    display: block;
+}
+
 /* --- ТЕХНІЧНИЙ ХЕДЕР --- */
 .site-header {
-    background: #21243D;
-    padding: 10px 0;
+    background: #21243D; /* Темний фон як на скріншоті */
+    padding: 15px 0;
 }
 
     .site-header ul {
         list-style: none;
         display: flex;
-        justify-content: center;
+        justify-content: flex-end; /* За замовчуванням праворуч */
         gap: 30px;
+        padding: 0 20px;
     }
+
+    /* На мобільному ми змінимо це на space-between */
 
     .site-header a {
         color: #fff;
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 500;
     }
 
@@ -120,11 +128,22 @@ a {
         object-fit: cover;
         position: relative;
         z-index: 2;
-        /* Ефект тіні-кола з дизайну */
         box-shadow: -10px 10px 0px 0px #EDF7FA;
     }
 
-/* --- PRACTICAL WORKS (RECENT POSTS STYLE) --- */
+.hero-bg-circle {
+    /* Додатковий елемент для еліпса, якщо потрібен */
+    position: absolute;
+    top: 5px;
+    right: -5px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #EDF7FA;
+    z-index: 1;
+}
+
+/* --- RECENT POSTS SECTION --- */
 .recent-posts-section {
     background: #EDF7FA;
     padding: 30px 0;
@@ -140,6 +159,7 @@ a {
     .section-header h2 {
         font-weight: 400;
         font-size: 22px;
+        color: #21243D;
     }
 
 .view-all {
@@ -197,7 +217,7 @@ a {
     opacity: 0.5;
 }
 
-/* --- LAB WORKS (FEATURED WORKS STYLE) --- */
+/* --- FEATURED WORKS SECTION --- */
 .featured-works-section {
     padding: 40px 15px;
 }
@@ -291,7 +311,6 @@ a {
     margin-bottom: 26px;
 }
 
-/* Імітація іконок через CSS для прикладу (можна замінити на fontawesome) */
 .icon {
     width: 30px;
     height: 30px;
@@ -309,32 +328,76 @@ a {
     color: #21243D;
 }
 
-/* --- АДАПТИВНІСТЬ --- */
+
+/* =========================================================
+   АДАПТИВНІСТЬ (MOBILE) - Відповідно до image_3233fc.png
+   ========================================================= */
 @media (max-width: 768px) {
-    .portfolio-nav {
-        justify-content: center;
-        font-size: 16px;
-        padding: 20px;
+
+    /* 1. Header: Посилання рознесені по краях */
+    .site-header ul {
+        justify-content: space-between;
+        padding: 0 15px;
     }
 
+    /* 2. Навігація: Центрована */
+    .portfolio-nav {
+        justify-content: center;
+        padding: 20px 10px;
+        gap: 15px;
+        font-size: 16px; /* Трохи менший шрифт */
+    }
+
+    /* 3. Hero Section: Реверс колонки (фото зверху) і центрування */
     .hero-section {
         flex-direction: column-reverse;
         text-align: center;
-        padding-top: 30px;
+        padding: 30px 15px;
     }
 
-    .hero-content h1 {
-        font-size: 32px;
-        line-height: 40px;
-        margin-bottom: 20px;
+    .hero-content {
+        margin-top: 35px;
+        /* Робимо flex column, щоб відцентрувати кнопку */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
+
+        .hero-content h1 {
+            font-size: 32px;
+            line-height: 40px;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            margin-bottom: 25px;
+        }
 
     .hero-image {
-        margin-bottom: 30px;
+        width: 170px;
+        height: 170px;
+        /* Тінь-коло на мобільному трохи менша */
+    }
+
+        .hero-image img {
+            box-shadow: -5px 10px 0px 0px #EDF7FA;
+        }
+
+    /* 4. Recent Posts Header: Вертикальне розташування */
+    .section-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        text-align: center;
     }
 
     .posts-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Одна колонка */
+    }
+
+    /* 5. Featured Works */
+    .featured-works-section h2 {
+        text-align: center;
     }
 
     .work-item {
@@ -344,6 +407,22 @@ a {
     .work-img-wrapper {
         width: 100%;
         height: auto;
-        aspect-ratio: 16/9;
+        aspect-ratio: 16/9; /* Зберігаємо пропорції */
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .work-content {
+        width: 100%;
+    }
+
+        .work-content h3 {
+            font-size: 24px;
+            line-height: 30px;
+        }
+
+    /* 6. Footer */
+    .social-icons {
+        gap: 20px;
     }
 }
