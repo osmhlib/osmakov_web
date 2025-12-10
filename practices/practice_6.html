@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практична 6: Frame Animation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles_pr6.css">
+</head>
+<body>
+
+    <header>
+        <h1>Мій персональний сайт</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Головна</a></li>
+                <li><a href="../about.html">Про мене</a></li>
+                <li><a href="../practices.html">Практичні роботи</a></li>
+                <li><a href="../labs.html">Лабораторні заняття</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="scene-container">
+        <h2 class="instruction-text">Tap to summon Gengar</h2>
+
+        <div class="scene">
+            <div class="effect-sequence"></div>
+
+            <div class="pokemon">
+                <img src="../img/gengar.gif" alt="Gengar">
+            </div>
+
+            <div class="pokeball-sequence"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Гліб Осьмаков.</p>
+    </footer>
+
+    <script>
+        const container = document.getElementById('scene-container');
+        const instruction = document.querySelector('.instruction-text');
+        let isAnimating = false;
+
+        container.addEventListener('click', () => {
+            if (isAnimating) return;
+            isAnimating = true;
+            instruction.style.opacity = '0';
+
+            // Перезапуск анімації (Trigger Reflow)
+            container.classList.remove('active');
+            void container.offsetWidth;
+            container.classList.add('active');
+
+            setTimeout(() => {
+                isAnimating = false;
+                instruction.textContent = "Tap again";
+                instruction.style.opacity = '1';
+            }, 4500);
+        });
+    </script>
+
+</body>
+</html>
